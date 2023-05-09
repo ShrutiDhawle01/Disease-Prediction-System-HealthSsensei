@@ -27,6 +27,6 @@ The diseases predicted by the web app include :
 - Python
 
 
-
+Contribution - Shubham Urmaliya , Yukta Kandhari
 
 
