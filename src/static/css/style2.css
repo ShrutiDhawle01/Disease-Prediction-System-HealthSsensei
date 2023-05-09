@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+/* form */
+
+
+/* The popup form - hidden by default */
+.form-popup {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    z-index: 9;
+  }
+  
+  
+  /* Add styles to the form container */
+  .form-container {
+    width: 500px;
+    height: 600px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 30px;
+  }
+  .signuplog{
+    height: 80px;
+    margin-top: -13px;
+  }
+  .box-container {
+    position: absolute;
+    background-image: linear-gradient(to bottom, #00b2fc, #01d3d4);
+    top: 5%;
+    right: 5%;
+    width: 70px;
+    height: 90%;
+    border-radius: 0 30px 30px 0;
+  }
+  .textv{
+    color: #f1f1f1;
+    font-weight: 700;
+    padding-top: 185px;
+    writing-mode: vertical-rl;
+    padding-left: 15px;
+    font-size: 30px;
+  
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password], .form-container input[type=email] {
+    width: 80%;
+    padding: 5px 15px 5px 15px;
+    margin: 5px 0 12px 0;
+    border: none;
+    border-radius: 70px;
+    background: #f3f3f3;
+  }
+  
+  
+  ::placeholder {
+    color: #00b2fc;
+    font-weight: 300;
+    opacity: 50%;
+  }
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus , .form-container input[type=email]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  li{
+    color: #00b2fc;
+  }
+  li::marker{
+    font-size: 18px;
+  }
+  .sp{
+    padding: 10px 0 10px 0;
+    color: #00b2fc;
+  }
+  .sp h1{
+    font-weight: 800;
+    font-size: 30px;
+  }
+  h1 span {
+    color: #01d3d4;
+    font-weight: 800;
+  }
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-image: linear-gradient(to right, #00b2fc, #01d3d4);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+    color: white;
+  }
+  
+  .create{
+    margin: -44px 5px 10px 119px;
+  }
+  .create a{
+    text-decoration: none;
+    opacity: 70%;
+  }
+  /* form end */
+  
+  
+  

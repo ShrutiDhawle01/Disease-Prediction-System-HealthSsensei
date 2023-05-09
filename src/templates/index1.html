@@ -1,0 +1,355 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static '/css/style1.css'%}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>healthSensei</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl fixed-top bg-light py-2 ">
+      <div class="flex_nav">
+        <img class="nav_logo" src="/static/img/Logo.png" alt="Logo_imgage" />
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'index1'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#predictionsection">Prediction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#technologysection">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#booksection">Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactsection">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <input
+            type="text"
+            class="input_nav"
+            placeholder="prompt your problem..."
+          />
+          <a href="{% url 'main' %}"
+            ><img
+              src="/static/img/Logo_search.png"
+              class="search_logo"
+              alt="Logo_search"
+          /></a>
+        </div>
+        <p>
+          {% if user.is_authenticated %}
+            Welcome {{ user.username }}!
+          {% endif %}
+        </p>
+      </div>
+    </nav>
+  
+    
+    <main id="mainclass" style="padding-top: 65px;"> 
+    </main>
+
+    <!-- Header -->
+    <div class="header" style="background-image: url('/static/img/header1.jpg');">
+      {% if messages %}
+        {% for message in messages %}
+            <div id="success-message" class="alert alert-success" style="padding-top: 5px;">
+                {{ message }}
+            </div>
+        {% endfor %}
+      {% endif %}
+      <div class="header_content">
+        <img src="/static/img/Logo_search.png" alt="" />
+        <h1>
+          Get personalised prediction for
+          <strong>Parkinson's lung and heart disease</strong> using Our
+          <strong>Disease Prediction Web App</strong>
+        </h1>
+        <div class="flex_button">
+          <button class="button_header open-button" style="width: 200px;"><a href="{% url 'signup'%}" style="text-decoration: none;color: white;">Get Started</a></button>
+          <p style="margin-left: 10px;"> or </p>
+          <a href="{% url 'login'%}" style="margin-left:10px;text-decoration: none;color: white;"> Login </a>
+          <!-- <a href="{% url 'login'%}"><p>Login</p></a> -->
+        </div>
+      </div>
+
+      <!-- <div>
+        <a href="#"
+          ><img src="/static/img/chatbot.png" alt="chatbot" class="chatbot_img"
+        /></a>
+      </div> -->
+    </div>
+    <script type="text/javascript">
+      (function(d, m){
+          var kommunicateSettings = 
+              {"appId":"35176753fa7f4d3fb1fb355869c0deaf6","popupWidget":true,"automaticChatOpenOnNavigation":true};
+          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+          s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+          var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+          window.kommunicate = m; m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+  /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+  </script>
+
+    <!-- Section 2 -->
+    <section  id="predictionsection" style="margin-top: -100px;">
+      <div class="section_2">
+        <div class="sec_2_con">
+          <div>
+            <img src="/static/img/heart.png" alt="heart_vector" />
+            <p style="margin-left: -10px;">heart<span>Disease</span></p>
+            <button class="section_button"><a href="{% url 'heartdisease'%}">Predict</a></button>
+          </div>
+          <div>
+            <img src="/static/img/lungs.png" alt="heart_vector" />
+            <p style="margin-left: -20px;">diabetes<span>Disease</span></p>
+            <button class="section_button"><a href="{% url 'diabetesdisease'%}">Predict</a></button>
+          </div>
+        </div>
+        <p class="text">
+          To get started, <strong>simply select the disease</strong> you want to
+          assess and <strong> answer a few questions</strong> about your health
+          history, lifestyle, and symptoms. Our system will analyze your responses
+          and <strong>generate a prediction</strong> for your likelihood of
+          developing the disease. You can then view detailed information about the
+          disease, including common symptoms,risk factors, and treatment options.
+        </p>
+      </div>
+  </section>
+  </main>
+
+
+
+    <!-- book appointment -->
+
+
+    <div id="booksection" class="hero-image" style="height:400px;background-image: linear-gradient(to right, #00b2fc, #01d3d4);background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;">
+      <div class="hero-text" style="text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;">
+        <h1>Exceptional Medical Care for All Ages.</h1>
+        <p> At our Medical Center
+            we combine world class medicine
+            with compassionate care. </p>
+            <a href="{% url 'appointment'%}" class="btn btn-light btn-lg action-button" type="button">Book an appointment</a>
+      </div>
+    </div>
+  
+  
+    <!-- book appointment end -->
+
+
+
+
+
+
+
+    <!-- technology -->
+
+    <ul id="technologysection" class="nav justify-content-center" style="margin: 150px;">
+      <li class="nav-item">
+        <img src="/static/img/technology2.png" alt="" height="80px">
+      </li>
+    </ul>
+
+    <!-- technology -->
+
+  <!-- Email Section -->
+
+
+  <section id="contactsection" class="card m-4 p-4">
+    <div class="container">
+      <div class="row text-center">
+        
+          <div class="col-sm-6">
+          <div class="contact-detail-box">
+            <i class="fa-solid fa-envelope fa-2xl" style="color: #165ad0;"></i>
+            <h4>Get In Touch</h4>
+            <abbr title="Phone"></abbr>+916261674735<br>
+            <a href="mailto:email@email.com" class="text-muted">healthSensei@gmail.com</a>
+          </div>
+        </div><!-- end col -->
+
+        <div class="col-sm-6">
+          <div class="contact-detail-box">
+            <i class="fa-solid fa-location-dot fa-2xl" style="color: #165ad0;"></i>
+            <h4>Our Location</h4>
+
+            <address>
+            Scheme 114, Plot 819<br>
+            Indore, Madhya Pradesh 452001<br>
+          </address>
+          </div>
+        </div><!-- end col -->
+
+
+
+      </div>
+      <!-- end row -->
+  
+  
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.669707579187!2d75.84236341431447!3d22.719568835563464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3963fc3cd1dce7f5%3A0x9fa5cd18a5da5ff5!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1651276970687!5m2!1sen!2sin" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 360px;"></iframe>
+          </div>
+        </div><!-- end col -->
+
+        <!-- Contact form -->
+        <div class="col-sm-6">
+          <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-container" action="{% url 'home'%}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="name2" style="color: #00B2FC;margin-left:10px;font-weight: bold;">Name</label>
+              <input class="form-control" id="name2" name="name" type="text" placeholder="Name">
+              <div class="error" id="err-name" style="display: none;">Please enter name</div>
+            </div> <!-- /Form-name -->
+
+            <div class="form-group">
+              <label for="email2" style="color: #00B2FC;font-weight: bold;margin-left: 10px;">Email</label>
+              <input class="form-control" id="email2" name="email" type="text" placeholder="Email">
+              <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
+            </div> <!-- /Form-email -->
+
+            <div class="form-group">
+              <label for="message2" style="color: #00B2FC;font-weight: bold;margin-left: 10px;">Message</label>
+              <textarea class="form-control" id="message2" name="message" rows="5" placeholder="Message">Message</textarea>
+
+              <div class="error" id="err-message" style="display: none;">Please enter message</div>
+            </div> <!-- /col -->
+
+            <div class="row">            
+                <button type="submit" class="section_button" id="send" style="margin-top: 10px;margin-left:10px;width: 20%;;">Send</button>
+              </div> <!-- /col -->
+            </div> <!-- /row -->
+
+          </form> <!-- /form -->
+        </div> <!-- end col -->
+
+      </div> <!-- end row -->
+            
+    </div>
+  </section>
+
+
+
+  <!-- email section end -->
+  
+  <!-- Footer -->
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 70px;">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+     
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="/static/img/Logo.png" alt="" height="30px">
+            </h6>
+            <p style="color:grey">
+              Our disease prediction web app utilizes advanced algorithms and machine learning techniques to provide personalized predictions for Heart Disease and Diabetese based on a user's symptoms and risk factors. 
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Scheme 114, Plot 819 Indore Madhya Pradesh</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              healthSensei@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> +916261674735</p>
+            <p><i class="fas fa-print me-3"></i> +916261674735</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="{%url 'index1'%}">healthSensei.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+
+
+
+
+    <!-- JS Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      function openForm2() {
+        document.getElementById("myForm2").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("myForm2").style.display = "none";
+      }
+
+
+      // Fade out the success message after 2 seconds
+      // Fade out the success message after 2 seconds
+      setTimeout(function() {
+          //document.getElementById("success-message").style.paddingTop = 0;
+          document.getElementById("success-message").style.display = "none";
+          document.getElementById("mainclass").style.paddingTop = "70px" ;
+      }.bind(this), 2000);
+
+
+    </script>
+  </body>
+</html>

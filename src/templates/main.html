@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/style1.css'%}" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl fixed-top bg-light py-3 ">
+        <div class="flex_nav">
+          <img class="nav_logo" src="/static/img/Logo.png" alt="Logo_imgage" />
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'index1'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Prediction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="input_nav"
+              placeholder="promt your problem..."
+            />
+            <a href=""
+              ><img
+                src="/static/img/Logo_search.png"
+                class="search_logo"
+                alt="Logo_search"
+            /></a>
+          </div>
+          <p>
+            {% if user.is_authenticated %}
+              Welcome {{ user.username }}!
+            {% endif %}
+          </p>
+        </div>
+      </nav>
+
+    <h1 style="padding-top: 10%;text-align: center;"></h3>
+    <form method="post" style="text-align: center;">
+        {% csrf_token %}
+        <h3>ask<span>Anything!</span></h3>
+        <p style="color: grey;">
+            In addition to connecting patients with top hospitals and doctors,<br>
+            our OpenAI integration also provides vital information such as<br>
+            correct phone numbers, precautions to take, and step-by-step guidance<br>
+            on what to do to ensure patients receive the help they need.
+        </p>
+        <input type="text" class="form-control qclass" name="user_input" placeholder="Ask your question?" style="width: 50%;border-radius: 30px;margin-left: 25%;">
+        <button type="submit" class="btn btn-primary mt-3 sbtn">Submit</button>
+    </form>
+
+
+    <div class="card " style="width: 40%;margin-left: 30%; box-shadow: 10px 10px 25px rgba(66, 66, 66, 0.281);border: none;margin-top: 20px;border-radius: 30px;">
+        <div class="card-body" style="text-align: center;">
+          <h3  style="text-align: center;font-weight: 300;">Here is your answer</h3>
+          <p class="card-text">
+            {% if response %}
+                <div>
+                    {{response|safe }}
+                </div>
+            {% endif %}</p>
+        </div>
+      </div>
+    
+
+
+
+
+    <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 5%;">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Laravel</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</body>
+</html>

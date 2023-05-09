@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+.navbar{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.flex_nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 3rem;
+  
+  float: left;
+}
+
+.nav_logo {
+  width: 10rem;
+  margin-left: 60px;
+  margin-right: 40px;
+}
+
+.search_logo {
+  width: 1.2rem;
+  position: relative;
+  right: 35px;
+  bottom: 3px;
+  margin-top: 5px;
+}
+
+.input_nav {
+  background-image: linear-gradient(to right, #00b2fc, #01d3d4);
+  border: none;
+  border-radius: 50px;
+  height: 2.5rem;
+  color: white;
+  width: 16rem;
+  padding-left: 35px;
+  font-size: 10px;
+}
+
+.input_nav::placeholder {
+  color: white;
+  font-size: 12px;
+  position: relative;
+  left: 2px;
+  bottom: 2px;
+  top: 0;
+}
+
+.qclass::placeholder{
+  color: rgb(90, 89, 89);
+  font-size: 15px;
+  position: relative;
+  text-align: center;
+}
+
+.flex_nav p {
+  margin-bottom: 0 !important;
+  font-weight: 600;
+}
+
+.flex_nav div {
+  margin-left: 80px;
+}
+
+.flex_nav div ul li {
+  margin-right: 30px;
+}
+
+.flex_nav div a {
+  cursor: pointer;
+}
+
+.flex_nav div ul li a.active {
+  color: black !important;
+  font-weight: 800 !important;
+  font-size: 16px;
+}
+
+.header {
+  height: 100vh;
+  background-image: url(./img/header.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.header_content {
+  width: 820px;
+  margin: auto 0;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+.header_content img {
+  width: 8rem;
+}
+
+.header_content h1 {
+  color: white;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.header_content div {
+  margin-top: 40px;
+  width: 230px;
+}
+
+.flex_button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.button_header {
+  background-image: linear-gradient(to right, #00b2fc, #01d3d4);
+  color: white;
+  padding: 14px;
+  padding-left: 20px !important;
+  padding-right: 20px !;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0px 5px 25px 5px rgba(0, 0, 0,0.07) ;
+}
+
+.flex_button p {
+  margin-bottom: 0 !important;
+  color: white;
+}
+
+.flex_button a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.chatbot_img {
+  position: absolute;
+  left: 1400px;
+  top: 600px;
+  width: 4rem;
+}
+
+.section_2 {
+  height: 80vh;
+  width: 80%;
+  margin: auto;
+}
+
+.section_button {
+  background-image: linear-gradient(to right, #00b2fc, #01d3d4);
+  color: white;
+  padding: 10px;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  border-radius: 50px;
+  border: none;
+}
+.section_button a{
+  text-decoration: none;
+  color: white;
+}
+
+/* fade */
+.alert.fade-out {
+  display: none;
+}
+
+
+/* fade */
+
+/* form */
+
+
+
+.section_2 img {
+  width: 7rem;
+}
+
+.section_2 p {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #00B2FC;
+}
+
+.section_2 span {
+  color: #01D3D4;
+  margin-left: 1px;
+}
+
+.sec_2_con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 80px;
+  width: 60%;
+}
+
+.text {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  color: black !important;
+  font-weight: 500 !important;
+}
+
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=email]{
+  width: 80%;
+  padding: 10px 15px 10px 15px;
+  margin: 5px 0 12px 0;
+  border: none;
+  border-radius: 70px;
+  background: #eff1f1;
+  color: grey;
+}
+
+.form-container textarea{
+  width: 80%;
+  padding: 10px 15px 10px 15px;
+  margin: 5px 0 12px 0;
+  border: none;
+  border-radius: 20px;
+  background: #eff1f1;
+  color: grey;
+}
